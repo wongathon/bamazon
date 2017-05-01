@@ -1,6 +1,6 @@
 # bamazon
 
-###Bamazon Customer App:
+### Bamazon Customer App:
 1. Running the app
 
 ![customer 1](/screenshots/customer_1.png)
