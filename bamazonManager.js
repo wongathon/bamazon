@@ -159,7 +159,7 @@ var addProduct = function(){
     }
   ]).then(function(ans){
     if (ans.pname && ans.dname && ans.price && ans.quant){
-      connection.query("INSERT INTO products (product_name, department_name, price, stock_quantity) VALUES (?, ?, ?, ?);", [ans.pname, ans.dname, ans.price, ans.quant], function(err, res){
+      connection.query("INSERT INTO products (product_name, department_name, price, stock_quantity, product_sales) VALUES (?, ?, ?, ?, 0);", [ans.pname, ans.dname, ans.price, ans.quant], function(err, res){
           if (err) throw err;
           console.log("Successfully added product!");
           runManager();

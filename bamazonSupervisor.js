@@ -18,7 +18,7 @@ var runSupervisor = function(){
 
   console.log("...")
   console.log("=====================");
-  console.log("Welcome to Bamazon Manager!!!");
+  console.log("Welcome to Bamazon Supervisor!!!");
   console.log("=====================");
   console.log("Here are your options: ");
   console.log("---------------------");
