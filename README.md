@@ -13,10 +13,6 @@
 
 ![customer 3](/screenshots/customer_3.png)
 
-4. Showing inventory with all product sales as customers buy items
-
-![purchases add](/screenshots/customer_4.png)
-
 ### Bamazon Manager App:
 1. Showing Low inventory on item
 
@@ -29,6 +25,10 @@
 3. Adding a product
 
 ![product add](/screenshots/manager_3.png)
+
+Product added
+
+![purchases add](/screenshots/customer_4.png)
 
 ### Bamazon Supervisor App:
 1. Viewing Department sales data
