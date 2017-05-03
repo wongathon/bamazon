@@ -53,14 +53,26 @@ var customerBuy = function(){
         if (selectedItem.stock_quantity > parseInt(r.units)) {
 
           var newStock = selectedItem.stock_quantity - parseInt(r.units);
+          var revenue = (selectedItem.price*parseInt(r.units)).toFixed(2);
+          var totalRev = parseFloat(selectedItem.product_sales) + parseFloat(revenue);
 
-          connection.query("UPDATE products SET ? WHERE ?", [{
-            stock_quantity: newStock
-          }, {
-            item_id: r.id
-          }], function(err){
+          console.log(totalRev);
+
+          connection.query("UPDATE products SET ? WHERE ?", [{stock_quantity: newStock}, {item_id: r.id }], function(err){
             if (err) throw err;
-            console.log("You successfully purchased " +r.units+" of "+selectedItem.product_name+" for $"+(selectedItem.price*parseInt(r.units)).toFixed(2)+"!!!");
+            console.log("You successfully purchased " +r.units+" of "+selectedItem.product_name+" for $"+revenue+"!!!");
+          });
+
+          connection.query("UPDATE products SET ? WHERE ?", [{product_sales: totalRev}, {item_id: r.id}], function(err){
+            if (err) throw err;
+          });
+
+          //department_name is undefined???
+          // connection.query("SELECT total_sales FROM departments WHERE ? = ?", [department_name, selectedItem.department_name], function(err, res){
+          //     console.log(res);
+          // })
+
+          connection.query("UPDATE departments SET ? WHERE ?", [{total_sales: revenue}, {department_name: selectedItem.department_name}], function(err) {if (err) throw err;
             process.exit();
           });
 
