@@ -36,7 +36,9 @@
 ![deparments](/screenshots/supervisor_1.png)
 
 2. Adding departments
+
 ![add dept](/screenshots/supervisor_2.png)
 
 3. Department database showing added depts
+
 ![database](/screenshots/supervisor_2b.png)
